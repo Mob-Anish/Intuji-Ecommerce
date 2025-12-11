@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../../services/products";
+import { getSingleProduct } from "../../services/products";
 
-export const useFetchProducts = () =>
+export const useFetchProduct = (id: string | undefined) =>
   useQuery({
-    queryKey: ["productsData"],
-    queryFn: (data) => getProducts(data),
+    queryKey: ["productData", id],
+    queryFn: () => getSingleProduct(id),
   });

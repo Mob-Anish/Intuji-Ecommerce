@@ -9,8 +9,8 @@ import { getProducts } from "../../services/products";
 const Products = () => {
   const [filter, setFilter] = useState({
     q: "",
-    limit: 10,
-    page: 1,
+    // limit: 10,
+    // page: 1,
   });
   const debouncedFilter = useDebounce(filter, 1000);
 
@@ -19,7 +19,6 @@ const Products = () => {
     queryFn: () => getProducts(debouncedFilter),
     enabled: Boolean(debouncedFilter),
   });
-
 
   return (
     <Box minH="80vh" p={"12"}>
@@ -41,7 +40,7 @@ const Products = () => {
             gap={"10"}
           >
             {[...Array(10)]?.map((_, i: number) => (
-              <Skeleton h={"200px"} w={"200px"} key={i} />
+              <Skeleton h={"380px"} w={"250px"} key={i} />
             ))}
           </Flex>
         ) : productsData?.products?.length > 0 ? (

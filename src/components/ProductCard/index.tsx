@@ -1,6 +1,9 @@
 import { Box, Image, Tag, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ item }: any) => {
+  const navigate = useNavigate();
+
   return (
     <Box
       h={"380px"}
@@ -9,6 +12,7 @@ const ProductCard = ({ item }: any) => {
       p={"6"}
       cursor={"pointer"}
       lineHeight={"6"}
+      onClick={() => navigate(`/products/${item?.id}`)}
     >
       <Image
         src={item?.images?.length > 1 ? item?.images[0] : item?.images}
