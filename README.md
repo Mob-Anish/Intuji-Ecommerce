@@ -1,6 +1,12 @@
 # React + TypeScript + Vite
 
-## Technologies Used - [React, ReactQuery, ChakraUi] - [ReactQuery]
+## Technologies Used - [React, ChakraUi] - [ReactQuery]
+
+## Features Completed
+
+1. Home Page
+2. Product Detail Page
+3. Add to Cart Functionality
 
 ## Setup Instructions
 
