@@ -1,6 +1,9 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
+import { useFetchAllCart } from "../../../../hooks/cart";
 
 const HomeNavbar = () => {
+  const { data: cartData } = useFetchAllCart();
+
   return (
     <>
       <Flex
@@ -18,6 +21,8 @@ const HomeNavbar = () => {
         <Heading size={"md"} fontWeight="600">
           Intuji Ecommerce
         </Heading>
+
+        <Text color={"white"}>Cart ({cartData?.totalQuantity})</Text>
       </Flex>
     </>
   );
